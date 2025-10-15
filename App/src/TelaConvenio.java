@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class TelaConvenio extends TelaBase {
 
@@ -34,7 +33,7 @@ public class TelaConvenio extends TelaBase {
         JPanel botoesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 20));
         botoesPanel.setOpaque(false);
 
-        String[] convenios = {"Unimed", "Amil", "SulAmerica", "Hapvida", "Particular"};
+        String[] convenios = {"unimed", "amil", "sulamerica", "hapvida", "Particular"};
         for (String nomeConvenio : convenios) {
             RoundedButton btn = new RoundedButton("", new Color(55, 48, 163, 150), new Color(94, 23, 235, 100), new Color(150, 100, 250, 150));
             btn.setPreferredSize(new Dimension(200, 120));
@@ -44,15 +43,15 @@ public class TelaConvenio extends TelaBase {
                 btn.setText("Particular");
             } else {
                 try {
-                    Image img;
-                    if (nomeConvenio.equals("unimed")) {
-                        img = new ImageIcon(getClass().getResource("/resources/" + nomeConvenio + ".png")).getImage().getScaledInstance(180, 80, Image.SCALE_SMOOTH);
-                    } else {
-                        img = new ImageIcon(getClass().getResource("/resources/" + nomeConvenio + ".png")).getImage().getScaledInstance(160, 80, Image.SCALE_SMOOTH);
-                    }
-                    btn.setIcon(new ImageIcon(img));
+                    String nomeArquivo = "/" + nomeConvenio + ".png";
+                    Image img = new ImageIcon(getClass().getResource(nomeArquivo)).getImage();
+
+                    int largura = (nomeConvenio.equals("unimed")) ? 180 : 160;
+                    Image scaledImg = img.getScaledInstance(largura, 80, Image.SCALE_SMOOTH);
+
+                    btn.setIcon(new ImageIcon(scaledImg));
                 } catch (Exception e) {
-                    btn.setText(nomeConvenio);
+                    btn.setText(nomeConvenio.substring(0, 1).toUpperCase() + nomeConvenio.substring(1));
                     System.err.println("Imagem não encontrada: " + nomeConvenio + ".png");
                 }
             }

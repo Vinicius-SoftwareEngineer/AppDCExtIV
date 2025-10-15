@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AppDCExtIV:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AppDCExtIV_jar</output-path>
+    <root id="archive" name="AppDCExtIV.jar">
+      <element id="module-output" name="App" />
+    </root>
+  </artifact>
+</component>

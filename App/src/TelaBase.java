@@ -14,7 +14,7 @@ public class TelaBase extends JFrame {
     protected void adicionarNavegacao(JPanel painelPrincipal, boolean mostrarVoltar, JFrame telaAnterior) {
         ImageIcon handIcon = null;
         try {
-            Image img = new ImageIcon(getClass().getResource("/resources/libras_hand.png")).getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+            Image img = new ImageIcon(getClass().getResource("/libras_hand.png")).getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
             handIcon = new ImageIcon(img);
         } catch (Exception e) { System.err.println("Imagem 'libras_hand.png' não encontrada."); }
 
@@ -44,7 +44,7 @@ public class TelaBase extends JFrame {
         if (mostrarVoltar) {
             ImageIcon backIcon = null;
             try {
-                Image img = new ImageIcon(getClass().getResource("/resources/voltar.png")).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+                Image img = new ImageIcon(getClass().getResource("/voltar.png")).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
                 backIcon = new ImageIcon(img);
             } catch (Exception e) { System.err.println("Imagem 'voltar.png' não encontrada."); }
 

@@ -49,13 +49,18 @@ public class TelaResumo extends TelaBase {
 
         RoundedButton editarBtn = new RoundedButton("Editar Informações", new Color(220, 38, 38), new Color(239, 68, 68), new Color(252, 165, 165));
         editarBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        try { editarBtn.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/resources/edit.png")).getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH)));
+        try {
+            Image img = new ImageIcon(getClass().getResource("/edit.png")).getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH);
+            editarBtn.setIcon(new ImageIcon(img));
         } catch(Exception e) {}
+
         editarBtn.addActionListener(e -> { new TelaConvenio().setVisible(true); dispose(); });
 
         RoundedButton concluirBtn = new RoundedButton("Concluir e Gerar Senha", new Color(22, 163, 74), new Color(34, 197, 94), new Color(134, 239, 172));
         concluirBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        try { concluirBtn.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/resources/checkmark.png")).getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH)));
+        try {
+            Image img = new ImageIcon(getClass().getResource("/checkmark.png")).getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH);
+            concluirBtn.setIcon(new ImageIcon(img));
         } catch(Exception e) {}
         concluirBtn.addActionListener(e -> { new TelaComprovante(convenio, regiaoDor, tempoDor).setVisible(true); dispose(); });
 

@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class TelaDor extends TelaBase {
 
@@ -44,7 +43,7 @@ public class TelaDor extends TelaBase {
 
             String nomeArquivo = regiao.toLowerCase().replace(" ", "");
             try {
-                Image img = new ImageIcon(getClass().getResource("/resources/" + nomeArquivo + ".png")).getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+                Image img = new ImageIcon(getClass().getResource("/" + nomeArquivo + ".png")).getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
                 btn.setIcon(new ImageIcon(img));
             } catch (Exception e) { System.err.println("Imagem não encontrada: " + nomeArquivo + ".png"); }
 
